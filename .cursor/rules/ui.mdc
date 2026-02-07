@@ -1,0 +1,51 @@
+---
+description: Standards for creating modern, high-density, "Linear-style" UIs using HTMX, semantic HTML, and lightweight CSS.
+globs: "app/templates/**/*.html, app/static/**/*.{css,js}"
+alwaysApply: false
+---
+
+# Universal UI (Theme + DX Defaults)
+
+Keep the UI dense, dark-first, and low-chroma. Prefer semantic HTML + Pico defaults; only add CSS for layout and deliberate components.
+
+## Pico Sand (baseline)
+
+Include Pico Sand:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
+```
+
+Enable dark theme via `data-theme="dark"` on the root `<html>` (see `app/templates/index.html`).
+
+## Project Theme Overrides (source of truth)
+
+All theme token overrides live in `app/static/css/app.css` under `[data-theme="dark"]`.
+
+```css
+[data-theme="dark"] {
+  /* Zinc backgrounds */
+  --pico-background-color: #09090b;
+  --pico-card-background-color: #18181b;
+  --pico-muted-border-color: rgba(63, 63, 70, 0.4);
+  --pico-form-element-background-color: #18181b;
+  --pico-form-element-border-color: rgba(63, 63, 70, 0.4);
+  --pico-form-element-active-background-color: #18181b;
+
+  /* Warm text tones */
+  --pico-base-color: #c8c2b4;
+  --pico-h6-color: #f0ece4;
+  --pico-h5-color: #e0dbd0;
+  --pico-h4-color: #c8c2b4;
+  --pico-h3-color: #b8b2a4;
+  --pico-h2-color: #a8a294;
+  --pico-h1-color: #908878;
+  --pico-muted-color: #8a8070;
+  --pico-form-element-placeholder-color: var(--pico-h3-color);
+  --pico-form-element-color: #e4dfd6;
+}
+```
+
+## Accent usage
+
+- Use Pico’s `--pico-primary-background` / `--pico-primary-inverse` for sand-highlight surfaces (e.g. hero `<kbd>` background).

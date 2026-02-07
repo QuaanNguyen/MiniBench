@@ -1,0 +1,111 @@
+/* Zinc dark backgrounds + warm text (override Pico Sand dark palette) */
+[data-theme="dark"] {
+  --pico-background-color: #09090b;
+  --pico-card-background-color: #18181b;
+  --pico-muted-border-color: rgba(63, 63, 70, 0.4);
+  --pico-form-element-background-color: #18181b;
+  --pico-form-element-border-color: rgba(63, 63, 70, 0.4);
+  --pico-form-element-active-background-color: #18181b;
+
+  /* Warm text tones */
+  --pico-base-color: #c8c2b4;
+  --pico-h6-color: #f0ece4;
+  --pico-h5-color: #e0dbd0;
+  --pico-h4-color: #c8c2b4;
+  --pico-h3-color: #b8b2a4;
+  --pico-h2-color: #a8a294;
+  --pico-h1-color: #908878;
+  --pico-muted-color: #8a8070;
+  --pico-form-element-placeholder-color: var(--pico-h3-color);
+  --pico-form-element-color: #e4dfd6;
+}
+
+/* Grid layout */
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+/* Sidebar */
+aside {
+  background-color: var(--pico-card-background-color);
+  border-right: 1px solid var(--pico-muted-border-color);
+  padding: 1rem;
+}
+
+aside nav li {
+  padding: 0;
+}
+
+aside nav strong {
+  color: var(--pico-primary-background);
+}
+
+aside nav a {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8125rem;
+  border-radius: 8px;
+}
+
+aside nav a:hover {
+  background-color: var(--pico-muted-border-color);
+}
+
+.secondary {
+  color: var(--pico-h2-color);
+}
+
+/* Hero */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.app-name {
+  text-align: center;
+  margin-bottom: 0;
+
+  color: var(--pico-h4-color);
+}
+
+/* kbd: sand-themed, tight padding */
+.app-name kbd {
+  padding: 0.1em 0.2em;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  background-color: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  --pico-font-family: Pacifico, cursive;
+  font-size: 2.5rem;
+}
+
+
+.input-area {
+  width: 100%;
+}
+
+
+.input-area small {
+  color: var(--pico-h3-color);
+}
+
+textarea {
+  border-radius: 8px;
+  min-height: 120px;
+}
